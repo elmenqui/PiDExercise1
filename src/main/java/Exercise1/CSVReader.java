@@ -25,13 +25,9 @@ class CSVReader {
         while ((line = reader.readLine()) != null) {
             String[] lineContents = line.split(",");
             Animal animal = new Animal();
-            try {
-                animal.setType(lineContents[0]);
-                animal.setName(lineContents[1]);
-                animal.setYear(lineContents[2]);
-            } catch (NumberFormatException e) {
-                System.out.println("The array doesn't have four items!");
-            }
+            animal.setType(lineContents[0]);
+            animal.setName(lineContents[1]);
+            animal.setYear(lineContents[2]);
             fields.add(animal);
         }
         return fields;
